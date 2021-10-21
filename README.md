@@ -1,2 +1,15 @@
-# umiDemo
-umi环境配置模板（不包含eslint）
+# umi project
+
+## Getting Started
+
+Install dependencies,
+
+```bash
+$ yarn
+```
+
+Start the dev server,
+
+```bash
+$ yarn start
+```
