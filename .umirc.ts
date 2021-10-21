@@ -11,11 +11,6 @@ export default defineConfig({
     { path: '/login', component: '@/pages/login/index' },
   ],
   fastRefresh: {},
-  
-  // ph-pages默认发布build文件夹下的内容
-  outputPath: 'build',
-  // publicPath: env === 'development' ? './' : 'http://bill_xiao.gitee.io/fullpage-demo/',
-
 
   // 更换当前主题色
   theme: {
@@ -23,15 +18,14 @@ export default defineConfig({
   },
   // 自动对数据深克隆并返回
   dva: {
-    immer: true
+    immer: true,
   },
   mfsu: {},
   proxy: {
     '/api': {
-      'target': 'http://120.55.193.14:3030',
-      'changeOrigin': true,
-      'pathRewrite': { '^/api': '' },
-    }
+      target: 'http://120.55.193.14:3030',
+      changeOrigin: true,
+      pathRewrite: { '^/api': '' },
+    },
   },
-  
 });
