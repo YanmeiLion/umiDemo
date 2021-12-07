@@ -1,0 +1,16 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+if [[ `git status admin --porcelain` ]]; then
+  echo "Found changes in admin"
+  cd admin
+#   git diff --cached --stat
+  echo "Find and fix problems in your JavaScript code"
+  npm run lint:fix
+  npm run prettier
+  echo "Automatically fixes the majority of stylistic problems"
+  npm run stylelint:fix
+  echo "Re-add cached files"
+  cd ..
+  git add $(git diff --name-only --cached)
+fi
+
