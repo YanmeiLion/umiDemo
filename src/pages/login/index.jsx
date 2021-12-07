@@ -7,7 +7,7 @@ export default function index() {
   function callback(key) {
     console.log(key);
   }
-  // console.log('qq')
+  console.log('qq');
 
   return (
     <div className={styles.loginInfo}>
