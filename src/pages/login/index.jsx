@@ -7,7 +7,8 @@ export default function index() {
   function callback(key) {
     console.log(key);
   }
-  console.log('qq');
+
+  console.log(ENWVEW_dsdf);
 
   return (
     <div className={styles.loginInfo}>
