@@ -1,44 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, Tabs, Breadcrumb, Button } from 'antd';
 import styles from './index.less';
 const { TabPane } = Tabs;
+import { NavLink } from 'umi';
 
-const breadcrumbData = [
-  { id: 1, title: '自动化邮件流程编辑', url: '111' },
-  { id: 2, title: '欢迎邮件1', url: '222' },
-  { id: 3, title: '选择模板', url: '333' },
-  { id: 4, title: '编辑内容', url: '444' },
-];
+import {
+  BreadCrumbDefaultData,
+  BreadCrumbPreviousStep,
+  BreadCrumbNextStep,
+} from '@/utils/commonBreadCrumb.js';
 
 export default function index() {
   // 面包屑
-  const [newArrBreadcrumb, setNewArrBreadcrumb] = useState(
-    breadcrumbData ?? [],
-  );
+  const [newArrBreadcrumb, setNewArrBreadcrumb] = useState([]);
+
+  useEffect(() => {
+    const result = BreadCrumbDefaultData();
+    setNewArrBreadcrumb(result);
+  }, []);
 
   function callback(key) {
     console.log(key);
   }
 
   const onClickCurrentBreadcrumb = (currentIndex) => {
-    commonBreadCrumb(currentIndex);
+    // commonBreadCrumb(currentIndex);
+    const previousData = BreadCrumbPreviousStep(currentIndex);
+    setNewArrBreadcrumb(previousData);
   };
 
-  // 提取公共面包屑
-  const commonBreadCrumb = (commonIndex) => {
-    // setNewArrBreadcrumb(newArrBreadcrumb.splice(0, newArr?.length))
-    setNewArrBreadcrumb([]);
-    let newArr = [];
-    breadcrumbData?.map((item, index) => {
-      if (index <= commonIndex) {
-        newArr.push(item);
-      }
-    });
-    setNewArrBreadcrumb(newArr);
-  };
+  // // 提取公共面包屑
+  // const commonBreadCrumb = (commonIndex) => {
+  //   // setNewArrBreadcrumb(newArrBreadcrumb.splice(0, newArr?.length))
+  //   setNewArrBreadcrumb([]);
+  //   let newArr = [];
+  //   breadcrumbData?.map((item, index) => {
+  //     if (index <= commonIndex) {
+  //       newArr.push(item);
+  //     }
+  //   });
+  //   setNewArrBreadcrumb(newArr);
+  // };
 
   const nextStep = () => {
-    commonBreadCrumb(newArrBreadcrumb?.length);
+    // commonBreadCrumb(newArrBreadcrumb?.length);
+    const nextData = BreadCrumbNextStep(newArrBreadcrumb?.length);
+    setNewArrBreadcrumb(nextData);
   };
 
   return (
@@ -72,7 +79,8 @@ export default function index() {
               key={item?.id}
               onClick={() => onClickCurrentBreadcrumb(index)}
             >
-              {item?.title}
+              <NavLink to={item?.url}> {item?.title} </NavLink>
+              {/* {item?.title} */}
             </Breadcrumb.Item>
           );
         })}
