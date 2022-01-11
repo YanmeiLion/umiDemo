@@ -34,17 +34,17 @@ export const BreadCrumbNextStep = (currentLength) => {
   return commonBreadCrumb(currentLength);
 };
 
-// 提取公共面包屑
-const commonBreadCrumb = (commonIndex, data) => {
-  // setNewArrBreadcrumb(newArrBreadcrumb.splice(0, newArr?.length))
-  let newArr = [];
-  data?.map((item, index) => {
-    if (index <= commonIndex) {
-      newArr.push(item);
-    }
-  });
-  return newArr;
-};
+// // 提取公共面包屑
+// const commonBreadCrumb = (commonIndex, data) => {
+//   // setNewArrBreadcrumb(newArrBreadcrumb.splice(0, newArr?.length))
+//   let newArr = [];
+//   data?.map((item, index) => {
+//     if (index <= commonIndex) {
+//       newArr.push(item);
+//     }
+//   });
+//   return newArr;
+// };
 
 // // 默认面包屑导航（数据）
 // export const BreadCrumbDefaultData = (name = '') => {
