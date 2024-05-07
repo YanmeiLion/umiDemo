@@ -9,6 +9,14 @@ export default defineConfig({
     { path: '/', component: '@/pages/index' },
     { path: '/home', component: '@/pages/home/index' },
     { path: '/login', component: '@/pages/login/index' },
+    { path: '/dragdrop', component: '@/pages/dragdrop/index' },
+    { path: '/sortable', component: '@/pages/sortable/index' },
+    { path: '/wangeditor', component: '@/pages/wangeditor/index' },
+    { path: '/other', component: '@/pages/other/index' },
+    { path: '/formList', component: '@/pages/formList/index' },
+    { path: '/demo', component: '@/pages/demo/index' },
+    { path: '/form', component: '@/pages/form/index' },
+    { path: '/dnd', component: '@/pages/dnd/index' },
   ],
   fastRefresh: {},
 
@@ -20,7 +28,7 @@ export default defineConfig({
   dva: {
     immer: true,
   },
-  mfsu: {},
+  // mfsu: {},
   proxy: {
     '/api': {
       target: 'http://120.55.193.14:3030',

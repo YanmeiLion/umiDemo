@@ -1,0 +1,61 @@
+
+.selectDiv {
+  margin-right: 50px;
+
+  :global {
+    .ant-select-selection-item {
+      max-width: 100px;
+    }
+  }
+}
+
+.contentDiv {
+  width: 800px;
+  margin: 100px;
+  border: 1px red solid;
+  padding: 20px;
+  display: flex;
+
+
+
+  // 表单
+  .formBox {
+    width: 85%;
+    margin-right: 20px;
+
+    .oneList {
+      display: flex;
+
+      .oneFormList {
+        border: 1px red solid;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      // 线条
+      .hrLine {
+        width: 3px;
+        background-color: #DFE6FF;
+        margin-right: 10px;
+        position: relative;
+      }
+
+      .checkbtn {
+        width: 22px;
+        height: 22px;
+        border-radius: 2px;
+        text-align: center;
+        line-height: 22px;
+        background-color: #DFE6FF;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: -11px;
+        margin: auto;
+      }
+    }
+
+  }
+
+}

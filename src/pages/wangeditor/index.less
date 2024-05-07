@@ -1,0 +1,46 @@
+.demo-editor {
+  // height: 275px !important;
+  // border: 1px solid #f1f1f1 !important;
+  // padding: 5px !important;
+  // border-radius: 2px !important;
+  border: 1px blue solid;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+.demo-wrapper{
+  box-sizing: content-box;
+}
+.toolbar-class div,
+.demo-wrapper div,
+.demo-editor div {
+  box-sizing: content-box;
+}
+[class~='rdw-dropdown-wrapper'] > a {
+  color: black;
+}
+[class~='rdw-fontsize-wrapper'] > [class~='rdw-dropdown-wrapper'] {
+  width: 60px;
+}
+[class='rdw-fontfamily-wrapper'] > [class~='rdw-dropdown-wrapper'] {
+  width: 120px;
+}
+[class~='rdw-dropdown-optionwrapper']{
+  width: 100%;
+}
+
+// [class~='public-DraftStyleDefault-block']{
+//   margin:  0px;
+// }
+
+
+[class='rdw-colorpicker-wrapper'] {
+  [class='rdw-colorpicker-modal-options'] {
+    [class~='rdw-colorpicker-option']:last-child {
+      box-shadow: none;
+      span{
+        background-image: url('../../assets/image/disabledImg.png');
+        background-size: cover;
+      }
+    }
+  }
+}

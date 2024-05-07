@@ -1,55 +1,83 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Tabs, Breadcrumb, Button } from 'antd';
+import { Card, Tabs, Radio, Space, Cascader } from 'antd';
 import styles from './index.less';
-const { TabPane } = Tabs;
-import { NavLink } from 'umi';
+import Tabpane1 from '../../components/Tabpane1';
+import Tabpane2 from '../../components/Tabpane2';
+import RichEditor from '../../components/RichEditor';
+import DayJs from '../../components/DayJs';
+import FromSelf from '../../components/FormSelf';
 
-import {
-  BreadCrumbDefaultData,
-  BreadCrumbPreviousStep,
-  BreadCrumbNextStep,
-} from '@/utils/commonBreadCrumb.js';
+const { TabPane } = Tabs;
+
+const options = [
+  {
+    value: 'zhejiang',
+    label: 'Zhejiang',
+    // children: [
+    //   {
+    //     value: 'hangzhou',
+    //     label: 'Hangzhou',
+    //     children: [
+    //       {
+    //         value: 'xihu',
+    //         label: 'West Lake',
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     value: 'yiwu',
+    //     label: 'yiwu',
+    //     children: [
+    //       {
+    //         value: 'xx',
+    //         label: 'xx',
+    //       },
+    //     ],
+    //   },
+    // ],
+  },
+  {
+    value: 'jiangsu',
+    label: 'Jiangsu',
+    children: [
+      {
+        value: 'nanjing',
+        label: 'Nanjing',
+        children: [
+          {
+            value: 'zhonghuamen',
+            label: 'Zhong Hua Men',
+          },
+        ],
+      },
+    ],
+  },
+];
 
 export default function index() {
-  // 面包屑
-  const [newArrBreadcrumb, setNewArrBreadcrumb] = useState([]);
-
-  useEffect(() => {
-    const result = BreadCrumbDefaultData();
-    setNewArrBreadcrumb(result);
-  }, []);
+  const [tabPosition, setTabPosition] = useState('left');
+  const [tabKey, setTabKey] = useState('1');
 
   function callback(key) {
     console.log(key);
   }
-
-  const onClickCurrentBreadcrumb = (currentIndex) => {
-    // commonBreadCrumb(currentIndex);
-    const previousData = BreadCrumbPreviousStep(currentIndex);
-    setNewArrBreadcrumb(previousData);
+  const changeTabPosition = (e) => {
+    setTabPosition(e.target.value);
   };
 
-  // // 提取公共面包屑
-  // const commonBreadCrumb = (commonIndex) => {
-  //   // setNewArrBreadcrumb(newArrBreadcrumb.splice(0, newArr?.length))
-  //   setNewArrBreadcrumb([]);
-  //   let newArr = [];
-  //   breadcrumbData?.map((item, index) => {
-  //     if (index <= commonIndex) {
-  //       newArr.push(item);
-  //     }
-  //   });
-  //   setNewArrBreadcrumb(newArr);
-  // };
+  function onChange(value) {
+    console.log(value);
+  }
 
-  const nextStep = () => {
-    // commonBreadCrumb(newArrBreadcrumb?.length);
-    const nextData = BreadCrumbNextStep(newArrBreadcrumb?.length);
-    setNewArrBreadcrumb(nextData);
-  };
 
   return (
     <div className={styles.loginInfo}>
+      <Cascader
+        options={options}
+        onChange={onChange}
+        placeholder="Please select"
+      />
+
       <Card size="small" className={styles.card}>
         <Tabs
           defaultActiveKey="1"
@@ -68,25 +96,34 @@ export default function index() {
         </Tabs>
       </Card>
 
-      <br />
-      <br />
-      <br />
+      <Space style={{ marginBottom: 24 }}>
+        Tab position:
+        <Radio.Group value={tabPosition} onChange={changeTabPosition}>
+          <Radio.Button value="top">top</Radio.Button>
+          <Radio.Button value="bottom">bottom</Radio.Button>
+          <Radio.Button value="left">left</Radio.Button>
+          <Radio.Button value="right">right</Radio.Button>
+        </Radio.Group>
+      </Space>
 
-      <Breadcrumb separator=">">
-        {newArrBreadcrumb?.map((item, index) => {
-          return (
-            <Breadcrumb.Item
-              key={item?.id}
-              onClick={() => onClickCurrentBreadcrumb(index)}
-            >
-              <NavLink to={item?.url}> {item?.title} </NavLink>
-              {/* {item?.title} */}
-            </Breadcrumb.Item>
-          );
-        })}
-      </Breadcrumb>
+      <Tabs tabPosition={tabPosition} destroyInactiveTabPane={true}>
+        <TabPane tab="Tab 1" key="1">
+          <Tabpane1></Tabpane1>
+        </TabPane>
 
-      <Button onClick={nextStep}>下一步</Button>
+        <TabPane tab="Tab 2" key="2">
+          <Tabpane2></Tabpane2>
+        </TabPane>
+        <TabPane tab="Tab 3" key="3">
+          Content of Tab 33333333333
+        </TabPane>
+      </Tabs>
+
+      <RichEditor></RichEditor>
+
+      <DayJs></DayJs>
+
+      <FromSelf></FromSelf>
     </div>
   );
 }

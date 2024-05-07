@@ -21,9 +21,32 @@
   },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
+    "@dnd-kit/core": "^6.0.5",
+    "@dnd-kit/sortable": "^7.0.1",
+    "ahooks": "^3.3.8",
+    "backdraft-js": "^0.0.1",
+    "dayjs": "^1.10.7",
+    "draft-js": "^0.11.7",
+    "draftjs-to-html": "^0.9.1",
+    "draftjs-utils": "^0.10.2",
+    "emoji-mart": "^3.0.1",
+    "html-to-draftjs": "^1.5.0",
+    "moment-timezone": "^0.5.34",
+    "perf_hooks": "^0.0.1",
+    "prop-types": "^15.8.1",
+    "querystring": "^0.2.1",
     "react": "17.x",
+    "react-beautiful-dnd": "^13.1.0",
+    "react-color": "^2.19.3",
     "react-dom": "17.x",
-    "umi": "^3.5.20"
+    "react-draft-wysiwyg": "^1.14.7",
+    "react-sortablejs": "^6.0.0",
+    "redraft": "^0.10.2",
+    "sortablejs": "^1.14.0",
+    "umi": "^3.5.20",
+    "wangeditor": "^4.7.11",
+    "zen": "^0.1.7",
+    "zent": "^9.12.3"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",
@@ -37,10 +60,8 @@
     "typescript": "^4.1.2",
     "yorkie": "^2.0.0"
   },
-  "name": "demo",
+  "name": "umi-demo",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/YanmeiLion/umiDemo.git",
-  "author": "'yanmei' <'yanmei@gmail.com'>",
   "license": "MIT"
 }

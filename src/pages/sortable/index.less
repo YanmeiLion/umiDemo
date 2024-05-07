@@ -1,0 +1,65 @@
+
+.handle{
+  background-color: pink;
+  width: 30px;
+  height: 30px;
+}
+
+.emailLeftBlock{
+  width: 130px;
+  height: 130px;
+  border: 1px #C7D6EB solid;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 2px;
+  box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.1);
+  margin-top: 24px;
+
+  img{
+    display: block;
+  }
+  img:nth-child(1){
+    padding: 0 57px;
+    padding-top: 11px;
+  }
+  img:nth-child(2){
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+  p{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    margin: auto;
+    text-align: center;
+    font-size: 14px;
+  }
+}
+
+
+.textDiv{
+  border: 1px blue solid;
+  position: relative;
+  pointer-events: none;
+}
+.textDiv::before{
+  position: absolute;
+  content: '11';
+  left: -20px;
+  background-color: red;
+  pointer-events: auto;
+}
+
+.textDiv::after{
+  position: absolute;
+  content: '22';
+  right: -20px;
+  background-color: yellow;
+  pointer-events: auto;
+}
+
