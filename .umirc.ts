@@ -17,6 +17,8 @@ export default defineConfig({
     { path: '/demo', component: '@/pages/demo/index' },
     { path: '/form', component: '@/pages/form/index' },
     { path: '/dnd', component: '@/pages/dnd/index' },
+    { path: '/x6', component: '@/pages/x6/index' },
+    { path: '/svelete', component: '@/pages/svelete/index' },
   ],
   fastRefresh: {},
 

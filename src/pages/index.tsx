@@ -69,51 +69,49 @@ export default function IndexPage(props: any) {
       <Button type="primary" onClick={toHome}>
         前往首页
       </Button>
-      <br />
+      <br /> <br />
       <Button type="primary">
-        {' '}
-        <Link to="/other">前往Css</Link>{' '}
-      </Button>
-      <br />
-      <br />
-      <Button type="primary">
-        {' '}
-        <Link to="/login">去到登录界面</Link>{' '}
+        <Link to="/other">前往Css</Link>
       </Button>
       <br /> <br />
       <Button type="primary">
-        {' '}
-        <Link to="/dragdrop">拖拽demo</Link>{' '}
+        <Link to="/login">去到登录界面</Link>
       </Button>
       <br /> <br />
       <Button type="primary">
-        {' '}
-        <Link to="/dnd">dnd 拖拽demo</Link>{' '}
+        <Link to="/dragdrop">拖拽demo</Link>
       </Button>
       <br /> <br />
       <Button type="primary">
-        {' '}
-        <Link to="/sortable">sortable Demo</Link>{' '}
+        <Link to="/dnd">dnd 拖拽demo</Link>
       </Button>
       <br /> <br />
       <Button type="primary">
-        {' '}
-        <Link to="/wangeditor"> React Editor 编辑器 </Link>{' '}
+        <Link to="/sortable">sortable Demo</Link>
       </Button>
       <br /> <br />
       <Button type="primary">
-        {' '}
-        <Link to="/formList"> FormList </Link>{' '}
+        <Link to="/wangeditor"> React Editor 编辑器 </Link>
       </Button>
       <br /> <br />
       <Button type="primary">
-        {' '}
-        <Link to="/demo"> demo </Link>{' '}
+        <Link to="/formList"> FormList </Link>
       </Button>
       <br /> <br />
       <Button type="primary">
-        {' '}
-        <Link to="/form"> form </Link>{' '}
+        <Link to="/demo"> demo </Link>
+      </Button>
+      <br /> <br />
+      <Button type="primary">
+        <Link to="/form"> form </Link>
+      </Button>
+      <br /> <br />
+      <Button type="primary">
+        <Link to="/x6"> x6动效 </Link>
+      </Button>
+      <br /> <br />
+      <Button type="primary">
+        <Link to="/svelete"> svelete搭建 </Link>
       </Button>
     </div>
   );
